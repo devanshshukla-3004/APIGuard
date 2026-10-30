@@ -1,0 +1,43 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Example Store API",
+    "version": "1.0.0",
+    "description": "Sample specification for local APIGuard testing."
+  },
+  "servers": [
+    { "url": "http://api.example.test/v1" }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health check",
+        "security": [],
+        "responses": { "200": { "description": "Service is healthy" } }
+      }
+    },
+    "/admin/users": {
+      "get": {
+        "summary": "List users",
+        "description": "Returns user records.",
+        "responses": { "200": { "description": "User list" } }
+      }
+    },
+    "/orders": {
+      "post": {
+        "summary": "Create order",
+        "description": "Creates an order. Apply rate limiting to prevent abuse.",
+        "security": [{ "BearerAuth": [] }],
+        "responses": { "201": { "description": "Order created" } }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
