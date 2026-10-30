@@ -125,14 +125,6 @@ APIGuard/
 
 Always inspect findings in the context of the API's intended behavior.
 
-## Roadmap
-
-- [ ] Add YAML specification support
-- [ ] Expand checks for CORS and insecure authentication patterns
-- [ ] Add SARIF output for code-scanning workflows
-- [ ] Support configurable rules and severity overrides
-- [ ] Improve reference resolution and specification validation
-
 ## Responsible use
 
 Use APIGuard with API specifications you own or are explicitly authorized to assess. Do not interpret a static finding as confirmation of a live vulnerability without appropriate validation.
